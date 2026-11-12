@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { SWRegister } from '@/components/sw-register'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: { default: 'RPPC OS', template: '%s · RPPC OS' },
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <SWRegister />
+        <Analytics />
       </body>
     </html>
   )
